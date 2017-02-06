@@ -14,3 +14,24 @@ const transformedAutobotsWithMap = autobots.map(function(autobot) {
 });
 
 console.log(transformedAutobotsWithMap);
+
+
+function map(collection, callback) {
+  const result = [];
+
+  for (let i = 0; i < collection.length; i++) {
+    const element = collection[i];
+    result.push(callback(element, i, collection));
+  }
+
+  return result;
+}
+
+const transformedAutobots = map(autobots, function (autobot) {
+  return Object.assign({}, autobot, {name: "sweetCat",
+    strength: autobot.strength * 2,
+    isTransformed: true,
+  });
+});
+
+console.log(transformedAutobots);
