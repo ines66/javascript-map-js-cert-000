@@ -6,7 +6,7 @@ const autobots = [
   { name: 'Ratchet', strength: 1.5, isTransformed: false, },
 ];
 
-const transformedAutobotsWithMap = autobots.map(function (autobot) {
+const transformedAutobotsWithMap = autobots.map(function(autobot) {
   return Object.assign({}, autobot, { name: "SoCute",
     strength: autobot.strength * 4,
     isTransformed: true,
